@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firstapiproject.databinding.FragmentStartBinding
-import com.example.firstapiproject.viewmodel.PlayerViewModel
 
 class StartFragment : Fragment() {
 
@@ -57,8 +56,8 @@ class StartFragment : Fragment() {
 
     private fun navigateToPlayerProfile(player: Player) {
         val action = StartFragmentDirections.actionStartFragmentToPlayerProfile(
-            firstName = player.first_name,
-            lastName = player.last_name
+             player.first_name,
+             player.last_name
         )
         findNavController().navigate(action)
     }

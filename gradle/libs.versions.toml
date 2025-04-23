@@ -2,6 +2,7 @@
 agp = "8.9.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
+safeArgs = "2.7.6"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -27,4 +28,6 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+safe-args-android = { id = "androidx.navigation.safeargs", version.ref = "safeArgs" }
+
 

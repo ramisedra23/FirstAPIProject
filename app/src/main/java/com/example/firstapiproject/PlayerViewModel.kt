@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.firstapiproject.Player
-import com.example.firstapiproject.PlayerRepository
 import com.example.firstapiproject.RetrofitInstance
+import com.example.firstapiproject.data.PlayerRepository
 import kotlinx.coroutines.launch
 
 class PlayerViewModel : ViewModel() {

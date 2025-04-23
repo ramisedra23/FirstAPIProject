@@ -11,16 +11,25 @@
         <action
             android:id="@+id/action_StartFragment_to_PlayerProfile"
             app:destination="@+id/PlayerProfileFragment">
+            <argument
+                android:name="firstName"
+                app:argType="string" />
+
+            <argument
+                android:name="lastName"
+                app:argType="string" />
         </action>
     </fragment>
 
     <fragment
-        android:id="@+id/PlayerProfileFragment"
+        android:id="@+id/playerProfileFragment"
         android:name="com.example.firstapiproject.PlayerProfileFragment"
-        tools:layout="@layout/fragment_player_profile">
+        android:label="Player Profile">
+
         <argument
             android:name="firstName"
             app:argType="string" />
+
         <argument
             android:name="lastName"
             app:argType="string" />

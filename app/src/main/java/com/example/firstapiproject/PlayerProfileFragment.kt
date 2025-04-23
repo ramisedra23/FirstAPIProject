@@ -30,8 +30,8 @@ class PlayerProfileFragment : Fragment() {
         val firstName = args.firstName
         val lastName = args.lastName
 
-        binding.editTextFirstName.text = firstName
-        binding.editTextLastName.text = lastName
+        binding.editTextFirstName.text
+        binding.editTextLastName.text
 
         Log.d("Navigation", "PlayerProfileFragment showing data for $firstName $lastName")
     }
