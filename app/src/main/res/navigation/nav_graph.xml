@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/StartFragment">
+
+    <fragment
+        android:id="@+id/StartFragment"
+        android:name="com.example.firstapiproject.StartFragment"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_StartFragment_to_PlayerProfile"
+            app:destination="@+id/PlayerProfileFragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlayerProfileFragment"
+        android:name="com.example.firstapiproject.PlayerProfileFragment"
+        tools:layout="@layout/fragment_player_profile">
+        <argument
+            android:name="firstName"
+            app:argType="string" />
+        <argument
+            android:name="lastName"
+            app:argType="string" />
+    </fragment>
+</navigation>

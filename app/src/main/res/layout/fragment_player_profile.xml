@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <LinearLayout android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TextView
+                android:text="First Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Last Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextPosition"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextHeight"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeight"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Jersey Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightJerseyNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="College"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightCollege"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightCountry"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Draft Year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightDraftYear"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Draft Round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightDraftRound"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+            <TextView
+                android:text="Draft Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/editTextWeightDraftNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/input_background"/>
+
+
+
+
+        </LinearLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".PlayerProfileFragment">
+
+        <TextView
+            android:id="@+id/profile_first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/profile_first_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

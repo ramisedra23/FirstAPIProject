@@ -1,0 +1,10 @@
+package com.example.firstapiproject.data
+
+import com.example.firstapiproject.ApiService
+import retrofit2.Callback
+
+class PlayerRepository(private val apiService: ApiService) {
+    suspend fun getPlayers(): Response<PlayerResponse> {
+        return apiService.getPlayers()
+    }
+}
