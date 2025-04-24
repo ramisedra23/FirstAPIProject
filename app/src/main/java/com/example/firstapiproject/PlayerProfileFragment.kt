@@ -14,7 +14,6 @@ class PlayerProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val args: PlayerProfileFragmentArgs by navArgs()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,15 +24,24 @@ class PlayerProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val player = arguments?.let {
+            PlayerProfileFragmentArgs.fromBundle(it).player
+        }
 
-        val firstName = args.firstName
-        val lastName = args.lastName
+        player?.let {
+            binding.editTextFirstName.setText(it.first_name)
+            binding.editTextLastName.setText(it.last_name)
+            binding.editTextPosition.setText(it.position)
 
-        binding.editTextFirstName.text
-        binding.editTextLastName.text
-
-        Log.d("Navigation", "PlayerProfileFragment showing data for $firstName $lastName")
+            binding.editTextHeight.setText(it.height_feet?.toString() ?: "N/A")
+            binding.editTextWeight.setText(it.weight_pounds?.toString() ?: "N/A")
+            binding.editTextWeightJerseyNumber.setText(it.jersey_number ?: "N/A")
+            binding.editTextWeightCollege.setText(it.college ?: "N/A")
+            binding.editTextWeightCountry.setText(it.country ?: "N/A")
+            binding.editTextWeightDraftYear.setText(it.draft_year?.toString() ?: "N/A")
+            binding.editTextWeightDraftRound.setText(it.draft_round?.toString() ?: "N/A")
+            binding.editTextWeightDraftNumber.setText(it.draft_number?.toString() ?: "N/A")
+        }
     }
 
     override fun onDestroyView() {

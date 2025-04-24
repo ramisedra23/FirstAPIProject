@@ -10,14 +10,10 @@
         tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_StartFragment_to_PlayerProfile"
-            app:destination="@+id/PlayerProfileFragment">
+            app:destination="@+id/playerProfileFragment">
             <argument
-                android:name="firstName"
-                app:argType="string" />
-
-            <argument
-                android:name="lastName"
-                app:argType="string" />
+                android:name="player"
+                app:argType="com.example.firstapiproject.Player" />
         </action>
     </fragment>
 
@@ -25,13 +21,8 @@
         android:id="@+id/playerProfileFragment"
         android:name="com.example.firstapiproject.PlayerProfileFragment"
         android:label="Player Profile">
-
         <argument
-            android:name="firstName"
-            app:argType="string" />
-
-        <argument
-            android:name="lastName"
-            app:argType="string" />
+            android:name="player"
+            app:argType="com.example.firstapiproject.Player" />
     </fragment>
 </navigation>

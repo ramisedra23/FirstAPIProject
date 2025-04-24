@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,9 +14,9 @@ class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: RecyclerAdapter
 
     private val viewModel: PlayerViewModel by viewModels()
+    private lateinit var playerAdapter: RecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,39 +27,30 @@ class StartFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        observeViewModel()
         viewModel.fetchPlayers()
+        observePlayers()
     }
 
     private fun setupRecyclerView() {
-        adapter = RecyclerAdapter(emptyList()) { player ->
-            navigateToPlayerProfile(player)
-        }
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = adapter
-    }
-
-    private fun observeViewModel() {
-        viewModel.players.observe(viewLifecycleOwner) { players ->
-            adapter.updatePlayers(players)
+        playerAdapter = RecyclerAdapter { int ->
+            val action = StartFragmentDirections.actionStartFragmentToPlayerProfile(int)
+            findNavController().navigate(action)
         }
 
-        viewModel.error.observe(viewLifecycleOwner) { errorMessage ->
-            errorMessage?.let {
-                Toast.makeText(requireContext(), "Error: $it", Toast.LENGTH_LONG).show()
-            }
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = playerAdapter
         }
     }
 
-    private fun navigateToPlayerProfile(player: Player) {
-        val action = StartFragmentDirections.actionStartFragmentToPlayerProfile(
-             player.first_name,
-             player.last_name
-        )
-        findNavController().navigate(action)
+    private fun observePlayers() {
+        viewModel.players.observe(viewLifecycleOwner) { playerList ->
+            playerAdapter.players=playerList
+        playerAdapter.notifyDataSetChanged()
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
