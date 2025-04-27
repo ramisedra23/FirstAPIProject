@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.firstapiproject.databinding.FragmentPlayerProfileBinding
 
 class PlayerProfileFragment : Fragment() {
@@ -41,6 +42,11 @@ class PlayerProfileFragment : Fragment() {
             binding.editTextWeightDraftYear.setText(it.draft_year?.toString() ?: "N/A")
             binding.editTextWeightDraftRound.setText(it.draft_round?.toString() ?: "N/A")
             binding.editTextWeightDraftNumber.setText(it.draft_number?.toString() ?: "N/A")
+
+            Glide.with(requireContext())
+                .load(it.imageUrl)
+
+                .into(binding.imageview)
         }
     }
 

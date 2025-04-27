@@ -20,11 +20,13 @@
             android:padding="20dp">
             <ImageView
                 android:id="@+id/iv_image"
+                app:shapeAppearanceOverlay="@style/roundedImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:src="@mipmap/ic_launcher_round"/>
