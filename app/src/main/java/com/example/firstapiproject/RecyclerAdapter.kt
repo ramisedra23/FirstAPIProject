@@ -7,6 +7,7 @@
     import android.view.ViewGroup
     import androidx.navigation.findNavController
     import androidx.recyclerview.widget.RecyclerView
+    import com.bumptech.glide.Glide
     import com.example.firstapiproject.databinding.ItemLayoutBinding
 
 
@@ -28,7 +29,10 @@
 
             holder.binding.firstName.text = player.first_name
             holder.binding.lastName.text = player.last_name
-
+            Glide.with(holder.itemView.context)
+                .load(player.imageUrl)
+                .error(holder.itemView.context.getDrawable(R.mipmap.ic_launcher_round))
+                .into(holder.binding.ivImage)
 
             val weight = player.weight_pounds?.toString() ?: "-"
             val jerseyNumber = player.jersey_number ?: "-"
@@ -37,6 +41,7 @@
             val draftYear = player.draft_year ?: "-"
             val draftRound = player.draft_round ?: "-"
             val draftNumber = player.draft_number ?: "-"
+
 
             holder.itemView.setOnClickListener {
                 val bundle = Bundle().apply {
@@ -50,6 +55,7 @@
                     putString("draft_year", draftYear.toString())
                     putString("draft_round", draftRound.toString())
                     putString("draft_number", draftNumber.toString())
+
                 }
 
               playersListener(players[position])

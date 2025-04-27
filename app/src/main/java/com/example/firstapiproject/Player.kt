@@ -14,5 +14,6 @@ data class Player(
     val country: String?,
     val draft_year: Int?,
     val draft_round: Int?,
-    val draft_number: Int?
+    val draft_number: Int?,
+    val imageUrl: String?
 ) : Serializable

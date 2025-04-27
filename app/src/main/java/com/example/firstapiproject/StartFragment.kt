@@ -1,5 +1,6 @@
 package com.example.firstapiproject
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -44,10 +45,16 @@ class StartFragment : Fragment() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun observePlayers() {
         viewModel.players.observe(viewLifecycleOwner) { playerList ->
             playerAdapter.players=playerList
-        playerAdapter.notifyDataSetChanged()
+            val playersWithImages = playerList.mapIndexed { index, player ->
+                player.copy(imageUrl = "https://cdn2.thecatapi.com/images/${player.id}.jpg")
+            }
+            playerAdapter.players = playersWithImages
+            playerAdapter.notifyDataSetChanged()
+
         }
     }
 
